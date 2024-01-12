@@ -1,0 +1,12 @@
+.required {
+    color: red;
+}
+
+.error-border {
+    border-color: red !important;
+}
+
+.warning-message {
+    color: red;
+    display: none
+}

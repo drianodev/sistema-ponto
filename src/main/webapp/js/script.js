@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // Submissão do formulário de Horário de Trabalho
     $("#horarioTrabalhoForm").submit(function (event) {
         event.preventDefault(); // Impede o envio padrão do formulário
 
@@ -20,6 +21,7 @@ $(document).ready(function () {
         });
     });
 
+    // Submissão do formulário de Marcações Feitas
     $("#marcacoesFeitasForm").submit(function (event) {
         event.preventDefault(); // Impede o envio padrão do formulário
 
@@ -40,21 +42,20 @@ $(document).ready(function () {
         });
     });
 
-    $(document).ready(function () {
-        $("#calculoAtrasoForm").submit(function (event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
+    // Submissão do formulário de Cálculo de Atraso
+    $("#calculoAtrasoForm").submit(function (event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
 
-            $.ajax({
-                type: "POST",
-                url: "calculoAtraso", // Este é o URL do seu servlet
-                success: function (response) {
-                    // Atualiza a tabela com os novos registros
-                    $("#calculoAtrasoTable").html(response);
-                },
-                error: function (error) {
-                    console.error(error);
-                }
-            });
+        $.ajax({
+            type: "POST",
+            url: "calculoAtraso", // Este é o URL do seu servlet
+            success: function (response) {
+                // Atualiza a tabela com os novos registros
+                $("#calculoAtrasoTable").html(response);
+            },
+            error: function (error) {
+                console.error(error);
+            }
         });
     });
 });

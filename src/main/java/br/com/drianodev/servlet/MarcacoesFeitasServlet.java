@@ -37,7 +37,7 @@ public class MarcacoesFeitasServlet extends HttpServlet implements Serializable 
     }
 
     private boolean isValidTime(String time) {
-        return true;
+        return time.matches("^([01]?[0-9]|2[0-3]):[0-5][0-9]$");
     }
 
     private List<String[]> getRegistros(HttpServletRequest request) {
